@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{978D4533-5847-4415-9BC7-DA79CE312A90}</ProjectGuid>
-    <RootNamespace>Antiscreenshot</RootNamespace>
+    <ProjectGuid>{7DD04A18-00DB-4024-8010-1415FCEDF786}</ProjectGuid>
+    <RootNamespace>Antiscreenshotlib</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -75,10 +75,6 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
-    <Link>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Windows</SubSystem>
-    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -114,21 +110,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AntiScreenshot.cpp" />
+    <ClCompile Include="anti_screenshotlib.cpp" />
+    <ClCompile Include="APIHook.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Anti-screenshot.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Anti-screenshot.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Anti-screenshotlib\Anti-screenshotlib.vcxproj">
-      <Project>{7dd04a18-00db-4024-8010-1415fcedf786}</Project>
-    </ProjectReference>
+    <ClInclude Include="anti_screenshotlib.h" />
+    <ClInclude Include="APIHook.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
